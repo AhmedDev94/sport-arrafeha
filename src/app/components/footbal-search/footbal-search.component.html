@@ -1,0 +1,24 @@
+<app-banner [title]=""></app-banner>
+<form [formGroup]="footballSearchForm" >
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="season" placeholder="season">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="league" placeholder="league">
+      </div>
+    <div class="form-group text-center">
+      <input type="submit" class="btn btn-primary py-3 px-5" (click)="search()" value="search">
+    </div>
+      <div class="teams-container">
+        <div class="teams-column">
+          <div *ngFor="let m of teams" class="team-item">
+            <span>Team: {{ m }} </span>
+          </div>
+        </div>
+        <div class="points-column">
+          <div *ngFor="let a of points" class="points-item">
+            <span>Points: {{ a }}</span>
+          </div>
+        </div>
+      </div>
+  </form> 

@@ -1,0 +1,17 @@
+<app-banner [title]=""></app-banner>
+<form [formGroup]="searchForm" >
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="city" placeholder="city">
+      </div>
+      
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="country" placeholder="country">
+      </div>
+     
+    
+
+    
+    <div class="form-group text-center">
+      <input type="submit" class="btn btn-primary py-3 px-5" (click)="search()" value="search">
+    </div>
+  </form> 

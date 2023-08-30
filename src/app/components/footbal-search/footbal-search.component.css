@@ -1,0 +1,21 @@
+.teams-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 10px; /* Gap between columns */
+  }
+  
+  .teams-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .points-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .team-item,
+  .points-item {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }

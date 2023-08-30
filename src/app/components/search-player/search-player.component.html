@@ -1,0 +1,46 @@
+<app-banner title="search player"></app-banner>
+  
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form [formGroup]="searchForm">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="name"  placeholder="name">
+              </div>
+              <div *ngIf="searchForm.controls['name'].invalid && 
+              (searchForm.controls['name'].touched ||
+              searchForm.controls['name'].dirty)">
+                <div *ngIf="searchForm.controls['name'].errors.required">name is required</div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="age" placeholder="age">
+              </div>
+              <div *ngIf="searchForm.controls['age'].invalid && 
+              (searchForm.controls['age'].touched ||
+              searchForm.controls['age'].dirty)">
+                <div *ngIf="searchForm.controls['age'].errors.required">age is required</div>
+              </div>
+            <div class="form-group text-center">
+              <input type="submit" class="btn btn-primary py-3 px-5" [disabled]="searchForm.invalid" (click)="search()" value="search">
+            </div>
+          </form> 
+          <div *ngIf ="findedPlayers ">
+            <div *ngFor = "let p of findedPlayers">
+            <p>{{p.name}}</p>
+            <p>{{p.age}}</p>
+            <p>{{p.position}}</p>
+          </div>
+          <div *ngIf = "findedPlayers.length == 0">
+            not found
+
+          </div>
+        </div>
+
+         
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
