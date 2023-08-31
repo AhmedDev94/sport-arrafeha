@@ -24,6 +24,7 @@ import { SearchPlayerComponent } from './components/search-player/search-player.
 import { ImcComponent } from './components/imc/imc.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { FootbalSearchComponent } from './components/footbal-search/footbal-search.component';
+import { DisplayingTeamPlayersComponent } from './displaying-team-players/displaying-team-players.component';
 
 
 //HTTP://localhost:signin=>logincomponent will be displayed
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path : "imc" , component : ImcComponent},
   {path : "weather" , component : WeatherComponent},
   {path : "football" , component : FootbalSearchComponent},
+  {path : "searchByTeam" , component : DisplayingTeamPlayersComponent},
   
 ];
 

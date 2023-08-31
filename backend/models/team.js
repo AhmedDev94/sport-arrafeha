@@ -5,6 +5,11 @@ const teamSchema = mongoose.Schema({
     name  : String,
     stadium : String,
     owner : String ,
+    players: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Player'
+        }],
+        
 });
 
 // AFFECT MODEL NAME TO SCHEMA 

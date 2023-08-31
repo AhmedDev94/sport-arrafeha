@@ -1,0 +1,13 @@
+<app-banner title ="serch Players by Team" ></app-banner>
+
+            <div class="form-group">
+              <select name="tID" id="" class="form-control" (change)="getTeamId($event)">
+                <option *ngFor="let t of teamList" [value]="t._id" style="color: black;">{{t.name}}</option>
+              </select>
+            </div>
+        
+            <div class="form-group text-center">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="search Player">
+            </div>
+      
+

@@ -16,6 +16,11 @@
             <div class="form-group">
               <input type="text" [(ngModel)]="player.position" name ="position" class="form-control" placeholder="Position">
             </div>
+            <div class="form-group">
+              <select  name="tID" id="" class="form-control" (change)="getTeamId($event)">
+                <option *ngFor="let t of teamList" [value]="t._id" style="color: black;">{{t.name}}</option>
+              </select>
+            </div>
             
             
             <div class="form-group text-center">

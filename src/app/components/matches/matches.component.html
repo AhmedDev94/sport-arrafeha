@@ -8,7 +8,7 @@
     </div>
   </div>
 <div *ngFor="let m of matches">
-  <app-score [X]="m"></app-score>
+  <app-score [X]="m" (matchesOutput)="updateMatches($event)"></app-score>
 </div>
 
 

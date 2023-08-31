@@ -10,7 +10,7 @@ export class PlayerService {
   constructor(private http : HttpClient) { }
   // REQUEST TO ADD team
   addplayer(obj){
-    return this.http.post<{msg : string}>(this.playerURL , obj)
+    return this.http.post<{msg : string , player : any }>(this.playerURL , obj)
   }; 
   // REQUEST TO GET player BY ID
   getplayerById(id){

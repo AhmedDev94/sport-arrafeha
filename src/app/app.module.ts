@@ -48,6 +48,7 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { FootbalSearchComponent } from './components/footbal-search/footbal-search.component';
 import { FilterPipe } from './pipes/filter.pipe'; 
 import { JwPaginationModule } from 'jw-angular-pagination';
+import { DisplayingTeamPlayersComponent } from './displaying-team-players/displaying-team-players.component';
 
 
 
@@ -96,6 +97,7 @@ import { JwPaginationModule } from 'jw-angular-pagination';
     WeatherComponent,
     FootbalSearchComponent,
     FilterPipe,
+    DisplayingTeamPlayersComponent,
     
    
   ],

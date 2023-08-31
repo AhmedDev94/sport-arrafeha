@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatchService } from 'src/app/services/match.service';
 
@@ -9,6 +9,7 @@ import { MatchService } from 'src/app/services/match.service';
 })
 export class ScoreComponent implements OnInit {
   @Input() X : any ;
+  @Output() matchesOutput: EventEmitter<any>=new EventEmitter();
   myPath : string ;
 
   constructor( private router : Router , private Mservice : MatchService) { }

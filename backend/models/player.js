@@ -5,6 +5,11 @@ const playerSchema = mongoose.Schema({
    position : String ,
    name  : String,
    age : String,
+   team: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Team'
+      },
+      
 });
 
 // AFFECT MODEL NAME TO SCHEMA 

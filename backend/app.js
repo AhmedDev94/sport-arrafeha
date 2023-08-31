@@ -375,10 +375,10 @@ app.post("/matches", (req, res) => {
   // matchesTab.push(obj) ;
 });
 
-app.post("/players", (req, res) => {
+app.post("/playersssschangedtotest", (req, res) => {
   //traitement de la request
   console.log("here into BL : add player", req.body);
-  let obj = req.body;
+ 
   // obj.id = newId(playersTab);
   // playersTab.push(obj);
   // player=> instance de type player
@@ -390,6 +390,33 @@ app.post("/players", (req, res) => {
     err ? res.json({ msg: "error" }) : res.json({ msg: "added successfully" });
   });
 });
+app.post("/players", (req, res) => {
+  //traitement de la request
+  console.log("here into BL : add player", req.body);
+try {
+  Team.findById(req.body.teamId).then((team) => {
+  if (!team) {
+  return res.status(404).json({ msg: "Team not found" });
+  }
+  const player = new Player({
+  name: req.body.name,
+  position: req.body.position,
+  age: req.body.age,
+  team: team._id,
+  });
+  player.save((err, doc) => {
+  team.players.push(player);
+  team.save();
+  res.status(201).json({msg : "player added with success" , player : player});
+  });
+  });
+  } catch (error) {
+  res
+  .status(500)
+  .json({ msg: "Error creating player", error: error.msg });
+  }
+  });
+  
 
 app.post("/teams", (req, res) => {
   //traitement de la request
